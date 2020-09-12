@@ -1,3 +1,4 @@
+/* 웹폰트 입니다 */
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
@@ -23,13 +24,14 @@
             
 
 
-
+/* 헤더입니다 */
 .header {
     font-family:  'Jeju Gothic', sans-serif;
     font-size: 18px;
     color:#FFB950;
 
 }
+/* 사진3개 그리드입니다 */
 #grid {
     width: 1200px;
     display: grid;
@@ -56,34 +58,6 @@
 
 }
 
-.menu-var {
-    margin: auto;
-    align-items: center;
-    box-shadow : 2px 2px 5px #999;
-}
-
-.footer {
-    text-align:center
-}
-
-#grid2 {
-    width: 500px;
-    display: grid;
-
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 2vw;
-    margin: auto;
-    
-}
-#grid2>div {
-    font-size: 1vw;
-    margin-top: 15px;
-    text-align: center;
-    opacity: 0.8;
-    font-family:  'Jeju Gothic', sans-serif;
-    font-weight: ;
-    letter-spacing: 1px;
-}
 
 p {
     display: block;
@@ -104,3 +78,34 @@ h3 {
     font-weight: bold;
     line-height:25px;
 }
+
+/* 메뉴 바 입니다 */
+.menu-var {
+    margin: auto;
+    align-items: center;
+    box-shadow : 2px 2px 5px #999;
+}
+
+#grid2 {
+    width: 500px;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2vw;
+    margin: auto;
+    
+}
+#grid2>div {
+    font-size: 1vw;
+    margin-top: 15px;
+    text-align: center;
+    opacity: 0.8;
+    font-family:  'Jeju Gothic', sans-serif;
+    font-weight: ;
+    letter-spacing: 1px;
+}
+/* 하위 배너 이미지입니다 */
+.footer {
+    text-align:center
+}
+
