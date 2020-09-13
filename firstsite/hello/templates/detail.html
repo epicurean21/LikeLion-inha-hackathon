@@ -1,0 +1,9 @@
+<img src="{{ onepost.image.url }}" width="10%">
+<h1>{{onepost.title}}</h1>
+<p>{{onepost.created_at}}</p>
+<p>{{onepost.updated_at}}</p>
+<p>{{onepost.body}}</p>
+
+<a href="{% url 'home' %}">홈으로</a>
+<a href="{% url 'postedit' onepost.id %}">수정하기</a>
+<a href="{% url 'postdelete' onepost.id %}">삭제</a>
