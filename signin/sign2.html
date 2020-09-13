@@ -38,15 +38,41 @@
     <input id = 'email' name="email" type="email" placeholder="12181234@inha.edu" required='required'>
    </div>
    <div>
-    <label for='email'>인증번호</label>
-    <input type = 'text' name="certification" required='required'>
-   </div>
-   <div>
        <label>전공</label>
        <input id ="text" name="department" type="text" required='required'>
        <label>학년</label>
        <input type="number" type=number min="1" max="6" required='required'>
     </div>
+    <div>
+        <label>계좌번호 입력</label>
+    
+       <input id="bank2" name="bank2" list="accountlist" placeholder="은행입력/선택", required='required',
+       size=11>
+       <datalist id="accountlist">
+           <option value="국민">
+           <option value="농협">
+           <option value="우리">
+           <option value="신한">
+           <option value="카카오뱅크">
+           <option value="하나">
+       </datalist>
+    
+        <class="formfield"><input type="text" id="bank" name="bank" size="20" maxlength="20" 
+        value="" autocomplete="off", required='required' placeholder="계좌번호 입력 ('-' 제외)">
+
+    </div>
+
+    <div>
+        <label>관심분야</label>
+        <input type = "checkbox" name="subject" value="디자인"> 디자인
+        <input type = "checkbox" name="subject" value="영상"> 영상
+        <input type = "checkbox" name="subject" value="사진"> 사진
+        <input type = "checkbox" name="subject" value="컨설팅"> 컨설팅
+        <input type = "checkbox" name="subject" value="웹"> 웹 프로그래밍
+        <input type = "checkbox" name="subject" value="앱"> 앱 프로그래밍
+        <input type = "checkbox" name="subject" value="기타"> 기타
+    </div>
+
 	<button type="submit">
 		<span>가입하기</span>
 	</button>
