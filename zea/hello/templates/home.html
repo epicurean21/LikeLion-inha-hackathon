@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>
+    <!-- 헤더 입니다. -->
+
+
+    <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
+            margin-top: 20px; margin-left: 20px;">
+        <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
+        <span>
+            <span style="margin-right: 60px; ">신청하기</span>
+
+            <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;" href="{% url 'home' %}">재능공간</a></span>
+
+            <span style="margin-right: 60px; ">마이페이지</span>
+            <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;" ></a>{% if user.is_authenticated %}
+    {{ user.username }}님!반갑습니다
+    <a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
+    <form id="logout" method="POST" action="{% url 'logout' %}">
+        {% csrf_token %} <input type="hidden" />
+    </form>
+{% else %}
+<span style="margin-right: 60px; "><a style="text-decoration: none;
+    color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
+{% endif %}</span>
+        </span>
+    </div>
+
+    <!-- 카테고리 입니다. -->
+    <div class="category">
+        <h2>재능공간</h2>
+        <br>
+        <hr align="left" style="border: soild 20px #FFB950; width:80%;">
+        <br>
+
+        <ul>
+            <li> 디자인 </li>
+            <br>
+            <br>
+            <li> 영상·사진 </li>
+            <br>
+            <br>
+            <li> 컨설팅 </li>
+            <br>
+            <br>
+            <li> IT·프로그래밍 </li>
+        </ul>
+
+    </div>
+
+    <div class="grid3">
+
+        <!-- 갤러리 입니다. -->
+        <div id="grid3">
+            {% for blog in page_posts %}
+            <div class="image1">
+                <a href="{% url 'detail' blog.id %}"><img src="{{ blog.image.url }}" width="100%"> </a>
+                <p> {{ blog.name }}</p>
+                <h1><a style="text-decoration:none; color:rgb(52, 52, 52);"
+                        href="{% url 'detail' blog.id %}">{{ blog.title }}</a>
+                </h1>
+                <p style="text-align: right; margin-right: 10px;"> {{ blog.pay }} 원 </p>
+            </div>
+
+            {%endfor%}
+        </div>
+    </div>
+
+    <div class="pagenation">
+        <ul style="margin-left: 50vw;">
+            {%if page_posts.has_previous%} <li>
+                <a style="text-decoration:none; color:gray;" href="?page={{page_posts.previous_page_number}}">이전</a>
+            </li>
+            {%endif%}
+            {%for i in page_posts.paginator.page_range%}
+            <li><a style="text-decoration:none; color:gray;" href="?page={{i}}">{{i}}</a></li>
+            {%endfor%}
+
+            {%if page_posts.has_next%}
+            <li><a style="text-decoration:none; color:gray;" href="?page={{page_posts.next_page_number}}">다음</a></li>
+            {%endif%}
+        </ul>
+    </div>
+</body>

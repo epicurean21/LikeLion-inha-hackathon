@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="{% static 'signup00.css' %}">
+</head>
+
+<!-- 헤더 입니다. -->
+
+<body style="margin: 0 auto; text-align:center;">
+
+    <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
+        margin-top: 20px; margin-left: 20px;">
+        <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
+        <span>
+            <span style="margin-right: 60px; ">신청하기</span>
+
+            <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;" href="{% url 'home' %}">재능공간</a></span>
+            <span style="margin-right: 60px; ">마이페이지</span>
+            <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
+        </span>
+    </div>
+
+
+ 
+    <form method="POST" action="{% url 'signup00' %}">
+    <br><br><br>
+    저는 소상공인입니다<a href="{% url 'signup01' %}"><br><br>소상공인 회원가입 하러가기</a>
+    <br><br><br><br>
+    저는 재능기여 대학생입니다<a href="{% url 'signup02' %}"><br>
+        <br>재능기여자 회원가입 하러가기</a>
+    </form>
+</body>
+</html>

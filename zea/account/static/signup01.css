@@ -1,0 +1,23 @@
+/* 웹폰트 입니다 */
+@import url('https://fonts.googleapis.com/earlyaccess/jejugothic.css');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+
+.jejugothic  { 
+ font-family: 'Jeju Gothic', sans-serif;
+} 
+
+
+.jejugothic  { 
+ font-family: 'Jeju Gothic', sans-serif;
+} 
+            
+
+
+/* 헤더입니다 */
+.header {
+    font-family:  'Jeju Gothic', sans-serif;
+    font-size: 18px;
+    color:#FFB950;
+
+}
