@@ -26,7 +26,7 @@
                 color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
         </span>
     </div>
- <form method="POST" action="{% url 'signup01' %}">
+ <form method="POST" action="{% url 'signup01' %}" enctype="multipart/form-data">
     {% csrf_token %}
      <div>
         <br><br><br>
@@ -50,8 +50,8 @@
     </div>
     <br>
      <div>
-         <label for='full-name'>닉네임</label>
-         <input id='full-name' name='full-name' type='text', required='required'>
+         <label for='fullname01'>닉네임</label>
+         <input id='fullname01' name='fullname01' type='text', required='required'>
        
         </div>
         <br>
@@ -80,7 +80,7 @@
         <br>
      <div>
          <label>파일첨부</label>
-         <input type="file" accept="image/jpeg">
+         <input type="file" name = "photo" accept="image/jpeg" >
    
         </div>
         <br><br><br>
