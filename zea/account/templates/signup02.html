@@ -11,99 +11,123 @@
 
 <!-- 헤더 입니다. -->
 
-<body style="margin: 0 auto; text-align:center;">
-
-    <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
+<div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
         margin-top: 20px; margin-left: 20px;">
-        <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
-        <span>
-            <span style="margin-right: 60px; ">신청하기</span>
+    <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
+    <span>
+        <span style="margin-right: 60px; ">신청하기</span>
 
-            <span style="margin-right: 60px; "><a style="text-decoration: none;
+        <span style="margin-right: 60px; "><a style="text-decoration: none;
                 color: #FFB950;" href="{% url 'home' %}">재능공간</a></span>
-            <span style="margin-right: 60px; ">마이페이지</span>
-            <span style="margin-right: 60px; "><a style="text-decoration: none;
-                color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
-        </span>
-    </div>
- <form method="POST" action="{% url 'signup02' %}">
-    {% csrf_token %}
-    <br><br><br> 
-    <div>
-         <h2>대학생 회원가입</h2>
-     </div>
-     <br><br>
-     <div>
-        <label for='login_id'>아이디</label>
-        <input type="text", name="username02" placeholder="아이디를 입력하세요." required='required'>
-    </div>
-    <br>
-    <div>
-        <label for="password">비밀번호</label>
-        <input type="password", name="password02",placeholder="비밀번호를 입력하세요.", required='required'>
-    </div>
-    <br>
-    <div>
-        <label for="password">비밀번호 확인</label>
-        <input type="password", name="confirm02", required='required'>
-    </div>
-    <br>
-     <div>
-         <label for='full-name'>닉네임</label>
-         <input id='full-name' name='full-name' type='text' required='required'>
-     </div>
-     <br>
-   <div>
-       <label>학교 찾기</label>
-       <input id ="text" name="school" type="search" required='required'>
-   </div>
-   <br>
-   <div>
-    <label for='email'>학교 이메일</label>
-    <input id = 'email' name="email" type="email" placeholder="12181234@inha.edu" required='required'>
-   </div>
-   <div>
-       <label>전공</label>
-       <input id ="text" name="department" type="text" required='required'>
-       <label>학년</label>
-       <input type="number" type=number min="1" max="6" required='required'>
-    </div>
-    <br>
-    <div>
-        <label>계좌번호 입력</label>
-    
-       <input id="bank2" name="bank2" list="accountlist" placeholder="은행입력/선택", required='required',
-       size=11>
-       <datalist id="accountlist">
-           <option value="국민">
-           <option value="농협">
-           <option value="우리">
-           <option value="신한">
-           <option value="카카오뱅크">
-           <option value="하나">
-       </datalist>
-    
-        <class="formfield"><input type="text" id="bank" name="bank" size="20" maxlength="20" 
-        value="" autocomplete="off", required='required' placeholder="계좌번호 입력 ('-' 제외)">
+        <span style="margin-right: 60px; ">마이페이지</span>
+        <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;"></a>{% if user.is_authenticated %}
+            {{ user.username }}님!반갑습니다
+            <span style="margin-right: 60px; "></span><a style="text-decoration: none;
+                color: #FFB950;" href="javascript:{document.getElementById('logout').submit()}">로그아웃</a></span>
+        <form id="logout" method="POST" action="{% url 'logout' %}">
+            {% csrf_token %} <input type="hidden" />
+        </form>
+        {% else %}
+        <span style="margin-right: 60px; "><a style="text-decoration: none;
+    color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
+        {% endif %}
+    </span>
+    </span>
+</div>
+<br><br>
 
-    </div>
-    <br>
-    <div>
-        <label>관심분야</label>
-        <input type = "checkbox" name="subject" value="디자인"> 디자인
-        <input type = "checkbox" name="subject" value="영상"> 영상
-        <input type = "checkbox" name="subject" value="사진"> 사진
-        <input type = "checkbox" name="subject" value="컨설팅"> 컨설팅
-        <input type = "checkbox" name="subject" value="웹"> 웹 프로그래밍
-        <input type = "checkbox" name="subject" value="앱"> 앱 프로그래밍
-        <input type = "checkbox" name="subject" value="기타"> 기타
-    </div>
-    <br><br><br>
-	<button type="submit">
-		<span>가입하기</span>
-	</button>
- </div>
+<div class="box1">
+    <form method="POST" action="{% url 'signup02' %}">
+        {% csrf_token %}
+        <br>
+        <div>
+            <h4>대학생 회원가입</h4>
+        </div>
+        <br><br>
+        <div class="box">
+            <div class="block">
+                <label for='login_id'>아이디</label>
+                <input type=" text" name="username01" placeholder="  아이디를 입력하세요." required='required' size="30">
+            </div>
+            <br>
+            <div class="block">
+                <label for="password">비밀번호</label>
+                <input type="password" name="password02" placeholder="  비밀번호를 입력하세요." required='required' size="30">
+            </div>
+            <br>
+            <div class="block">
+                <label for="password">비밀번호 확인</label>
+                <input type="password" name="confirm02" placeholder="  비밀번호를 다시 입력하세요." required='required' size="30">
+            </div>
+            <br>
+            <div class="block">
+                <label for='full-name'>닉네임</label>
+                <input id='full-name' name='full-name' type='text' required='required' size="30">
+            </div>
+            <br>
+            <div class="block">
+                <label>학교 찾기</label>
+                <input id="text" name="school" type="text" required='required' size="30" placeholder=" ex)인하대학교">
+            </div>
+            <br>
+            <div class="block">
+                <label for='email'>학교 이메일</label>
+                <input id='email' name="email" type="email" placeholder=" ex)12181234@inha.edu" required='required'
+                    size="30">
+            </div>
+            <br>
+            <div class="block">
+                <label>전공</label>
+                <input id="text" name="department" type="text" required='required' size="30" style="width: 100px;
+                height: 25px;">
+                <label style="width:30px;">학년</label>
+                <input type="number" type=number min="1" max="6" required='required' size="30" style="width: 40px;
+                height: 25px;">
+            </div>
+            <br>
+            <div class="block">
+                <label> 계좌번호 입력</label>
 
- </form>
+                <input id="bank2" name="bank2" list="accountlist" placeholder=" 은행선택" required='required' size=11 style="width: 100px;
+                height: 25px;">
+                <datalist id="accountlist">
+                    <option value="국민">
+                    <option value="농협">
+                    <option value="우리">
+                    <option value="신한">
+                    <option value="카카오뱅크">
+                    <option value="하나">
+                </datalist>
+
+                <class="formfield"><input type="text" id="bank" name="bank" size="20" maxlength="20" style="width: 150px;
+                height: 25px;" autocomplete="off" required='required' placeholder=" 계좌번호 입력 ('-' 제외)">
+
+            </div>
+            <br>
+            <div class="block">
+                <label>관심분야</label>
+                <input style="width:15px;" type="checkbox" name="subject" value="디자인">
+                <p>디자인</p>
+                <input style="width:15px;" type="checkbox" name="subject" value="촬영">
+                <p>촬영</p>
+                <input style="width:15px;" type="checkbox" name="subject" value="컨설팅">
+                <p>컨설팅</p><br>
+                <label> </label>
+                <input style="width:15px;" type="checkbox" name="subject" value="프로그래밍">
+                <p>프로그래밍</p>
+                <input style="width:15px;" type="checkbox" name="subject" value="기타">
+                <p>기타</p>
+            </div>
+            <br><br>
+            <div style="text-align: center;">
+                <input class="signup-input" type="submit" value="가입하기">
+            </div>
+        </div>
+
+</div>
+
+</form>
 </body>
+
 </html>

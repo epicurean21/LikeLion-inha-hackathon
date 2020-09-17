@@ -24,6 +24,7 @@
 #grid {
     width: 1200px;
     display: grid;
+
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 3vw;
     margin: auto;
@@ -52,6 +53,7 @@ p {
     margin-block-start: 0em;
     margin-block-end: 1em;
     line-height:25px;
+    color: green;
 }
 
 h3 {
@@ -75,12 +77,12 @@ h3 {
 #grid2 {
     width: 500px;
     display: grid;
+    
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 2vw;
     margin: auto;
     
 }
-
 #grid2>div {
     font-size: 1vw;
     margin-top: 15px;
@@ -89,7 +91,7 @@ h3 {
     font-family:  'Jeju Gothic', sans-serif;
     font-weight: bolder;
     letter-spacing: 1px;
-    
+    color: gray;
 }
 /* 하위 배너 이미지입니다 */
 .footer {

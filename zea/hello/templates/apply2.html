@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="./main/main.css">
+</head>
+
+<body style="margin: 0 auto; text-align:center;">
+
+    <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
+         margin-top: 20px; margin-left: 20px;">
+        <img src="./main/logo.png" width="90px" style="top: 50%;">
+        <span style="">
+            <span style="margin-right: 60px; ">신청하기</span>
+            <span style="margin-right: 60px; ">재능공간</span>
+            <span style="margin-right: 60px; ">마이페이지</span>
+            <span style="margin-right: 60px; ">회원가입</span>
+            <span style="margin-right: 60px; ">로그인</span>
+        </span>
+    </div>
+</body>
+<hr>
+<form>
+    <div>
+        <h2>신청하기</h2>
+    </div>
+    <div>
+        <label for='name'>이름(상호명)</label>
+        <input type="text" , id="name" , required='required'>
+    </div>
+    <div>
+        <label for="contact">비상연락망</label>
+        <input type="text" , id="contact" , required='required'>
+    </div>
+    <div>
+
+    </div>
+    <div>
+        <label for='email'>닉네임</label>
+        <input id='email' name='email' type='email' , required='required'>
+    </div>
+    <div>
+        <label for='applyContent'>지원 희망 내용</label><br>
+        <textarea style="resize: none;" id='applyContent' name='applyContent' rows="10" cols="50"></textarea>
+    </div>
+    <div>
+        <label for='input'>첨부파일</label>
+        <input type="file">
+    </div>
+    <button type="submit">
+        <span>신청하기</span>
+    </button>
+    </div>
+
+</form>
+
+</html>

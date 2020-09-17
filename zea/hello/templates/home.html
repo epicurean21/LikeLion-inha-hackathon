@@ -15,26 +15,27 @@
 
 
     <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
-            margin-top: 20px; margin-left: 20px;">
+    margin-top: 20px; margin-left: 20px;">
         <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
         <span>
             <span style="margin-right: 60px; ">신청하기</span>
 
             <span style="margin-right: 60px; "><a style="text-decoration: none;
-                color: #FFB950;" href="{% url 'home' %}">재능공간</a></span>
-
+            color: #FFB950;" href="{% url 'home' %}">재능공간</a></span>
             <span style="margin-right: 60px; ">마이페이지</span>
             <span style="margin-right: 60px; "><a style="text-decoration: none;
-                color: #FFB950;" ></a>{% if user.is_authenticated %}
-    {{ user.username }}님!반갑습니다
-    <a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
-    <form id="logout" method="POST" action="{% url 'logout' %}">
-        {% csrf_token %} <input type="hidden" />
-    </form>
-{% else %}
-<span style="margin-right: 60px; "><a style="text-decoration: none;
-    color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
-{% endif %}</span>
+            color: #FFB950;"></a>{% if user.is_authenticated %}
+                {{ user.username }}님!반갑습니다
+                <span style="margin-right: 60px; "></span><a style="text-decoration: none;
+            color: #FFB950;" href="javascript:{document.getElementById('logout').submit()}">로그아웃</a></span>
+            <form id="logout" method="POST" action="{% url 'logout' %}">
+                {% csrf_token %} <input type="hidden" />
+            </form>
+            {% else %}
+            <span style="margin-right: 60px; "><a style="text-decoration: none;
+color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
+            {% endif %}
+        </span>
         </span>
     </div>
 

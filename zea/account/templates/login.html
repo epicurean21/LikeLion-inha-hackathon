@@ -9,38 +9,66 @@
     <link rel="stylesheet" href="{% static 'login.css' %}">
 </head>
 
-<!-- 헤더 입니다. -->
+
 
 <body style="margin: 0 auto; text-align:center;">
 
-    <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
+    <!-- 헤더 입니다. -->
+
+    <body style="margin: 0 auto; text-align:center;">
+
+        <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
         margin-top: 20px; margin-left: 20px;">
-        <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
-        <span>
-            <span style="margin-right: 60px; ">신청하기</span>
+            <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
+            <span>
+                <span style="margin-right: 60px; ">신청하기</span>
 
-            <span style="margin-right: 60px; "><a style="text-decoration: none;
+                <span style="margin-right: 60px; "><a style="text-decoration: none;
                 color: #FFB950;" href="{% url 'home' %}">재능공간</a></span>
-            <span style="margin-right: 60px; ">마이페이지</span>
-            <span style="margin-right: 60px; "><a style="text-decoration: none;
-                color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
-        </span>
-    </div>
+                <span style="margin-right: 60px; ">마이페이지</span>
+                <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;"></a>{% if user.is_authenticated %}
+                    {{ user.username }}님!반갑습니다
+                    <span style="margin-right: 60px; "></span><a style="text-decoration: none;
+                color: #FFB950;" href="javascript:{document.getElementById('logout').submit()}">로그아웃</a></span>
+                <form id="logout" method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %} <input type="hidden" />
+                </form>
+                {% else %}
+                <span style="margin-right: 60px; "><a style="text-decoration: none;
+    color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
+                {% endif %}
+            </span>
+            </span>
+        </div>
 
-    <form method="POST" action="{% url 'login' %}">
-        {% csrf_token %}
-        <br><br><br>
-        <p>아이디</p>
-        <input type="text" name="username">
-        <br>
-        <p>비밀번호</p>
-        <input type="text" name="password">
-        <br><br>
-        <input type="submit" value="로그인">
-        <br><br><br><br><br><br>
-        
-        <div>아직 회원이 아니신가요?</div>  <br>
-        <a href="{%url 'signup00'%}">회원가입하러가기</a>
-    </form>
-</body>
+        <!-- 로그인 입니다. -->
+        <br><br><br><br>
+        <div class="box">
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <br><br>
+                <h4>로그인하기</h4>
+                <br>
+                <div class="id-box">
+                    <input class="id-input" type="text" name="username" placeholder="아이디를 입력하세요.">
+                </div>
+                <br>
+                <div class="password-box">
+                    <input class="password-input" type="text" name="password" placeholder="비밀번호를 입력하세요.">
+                </div>
+                <br><br>
+                <input class="login-input" type="submit" value="로그인하기">
+                <br>
+
+                <a style="text-decoration: none;
+                color: gray;" href="{%url 'signup00'%}">
+                    <p>회원가입하기</p>
+                </a>
+
+                <hr align="center" style="border: soild 10px; width:25%; ">
+            </form>
+        </div>
+    </body>
+
 </html>
