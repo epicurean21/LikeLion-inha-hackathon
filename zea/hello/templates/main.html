@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<!-- 헤더 입니다. -->
+
+<body style="margin: 0 auto; text-align:center;">
+
+    <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
+        margin-top: 20px; margin-left: 20px;">
+        <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
+        <span>
+            <span style="margin-right: 60px; ">신청하기</span>
+
+            <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;" href="{% url 'home' %}">재능공간</a></span>
+            <span style="margin-right: 60px; ">마이페이지</span>
+            <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;" ></a>{% if user.is_authenticated %}
+    {{ user.username }}님!반갑습니다
+    <a href="javascript:{document.getElementById('logout').submit()}">로그아웃<a style="text-decoration: none;
+        color: #FFB950;" ></a></a>
+    <form id="logout" method="POST" action="{% url 'logout' %}">
+        {% csrf_token %} <input type="hidden" />
+    </form>
+{% else %}
+<span style="margin-right: 60px; "><a style="text-decoration: none;
+    color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
+{% endif %}</span>
+        </span>
+    </div>
+
+    <!-- 메뉴 바 입니다. -->
+    <img src="/static/img/main3.jpg" alt="main" width="100%">
+    <div class="menu-var">
+        <div style="position:relative;margin:auto;width:700px; ">
+            <div
+                style="border-radius: 9999px; height:110px; width: 750px; background-color: white; text-align: center; position:absolute; margin-top:-60px; box-shadow : 2px 5px 5px #d7d7d7;">
+
+                <div id="grid2">
+                    <div class="icon-design">
+                        <img src="/static/img/icon-design.png" alt="icon-design" width="50px">
+                        <p>디자인</p>
+                    </div>
+                    <div class="icon-video">
+                        <img src="/static/img/video1.png" alt="icon-video" width="50px">
+                        <p>영상·사진</p>
+                    </div>
+                    <div class="icon-consulting">
+                        <img src="/static/img/consulting1.png" alt="icon-consulting" width="50px">
+                        <p>컨설팅</p>
+                    </div>
+                    <div class="icon-computer">
+                        <img src="/static/img/computer1.png" alt="icon-computer" width="50px">
+                        <p>IT·프로그래밍</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 사진 3개 이미지입니다. -->
+    <div id="grid">
+        <div class="1box-image">
+
+            <img src="/static/img/team.jpg" alt="1box-image" width="100%">
+
+            <h3>소근소근은 <br> 서로 함께 돕는 기쁨을 제공합니다.</h3>
+            <p>좋은 취지로 소상공인을 돕고 싶은 <br> 대학생들을 환영합니다. 지금 바로 도전해보세요.</p>
+        </div>
+        <div class="2box-image">
+
+            <img src="/static/img/1box.png" alt="1box-image" width="100%">
+
+            <h3>소근소근은 <br> 가능성이 있는 인재를 찾고 있습니다.</h3>
+            <p>부족한 재능은 없습니다. 재능기여를 통해 <br>소소한 용돈벌이와 함께 재능을 키워보세요!</p>
+        </div>
+        <div class="3box-image">
+
+            <img src="/static/img/study.jpg" alt="1box-image" width="100%">
+
+            <h3>소근소근은 <br> 높은 효율성을 지향합니다.</h3>
+            <p>결과물이 나오는 포트폴리오가 필요할 때,<br> 자투리 시간에 틈틈히 이용하실 수 있습니다.</p>
+        </div>
+
+    </div>
+
+    <!-- 하위 배너 이미지입니다. -->
+    <img class="footer" src="/static/img/footer.jpg" alt="footer" width="80%"
+        style="margin-top: 400px; margin-bottom: 50px;">
+
+</body>
+
+
+</html>

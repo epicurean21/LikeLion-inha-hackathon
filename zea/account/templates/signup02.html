@@ -1,50 +1,74 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>main</title>
+    <link rel="stylesheet" href="{% static 'signup02.css' %}">
 </head>
-<body>
- <header>
-     <h1> 헤더 </h1>
- </header>
- <form>
-     <div>
+
+<!-- 헤더 입니다. -->
+
+<body style="margin: 0 auto; text-align:center;">
+
+    <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
+        margin-top: 20px; margin-left: 20px;">
+        <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
+        <span>
+            <span style="margin-right: 60px; ">신청하기</span>
+
+            <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;" href="{% url 'home' %}">재능공간</a></span>
+            <span style="margin-right: 60px; ">마이페이지</span>
+            <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
+        </span>
+    </div>
+ <form method="POST" action="{% url 'signup02' %}">
+    {% csrf_token %}
+    <br><br><br> 
+    <div>
          <h2>대학생 회원가입</h2>
      </div>
+     <br><br>
      <div>
         <label for='login_id'>아이디</label>
-        <input type="text" id="login_id" required='required'>
+        <input type="text", name="username02" placeholder="아이디를 입력하세요." required='required'>
     </div>
+    <br>
     <div>
         <label for="password">비밀번호</label>
-        <input type="password" id="password" required='required'>
+        <input type="password", name="password02",placeholder="비밀번호를 입력하세요.", required='required'>
     </div>
+    <br>
     <div>
-
+        <label for="password">비밀번호 확인</label>
+        <input type="password", name="confirm02", required='required'>
     </div>
+    <br>
      <div>
-         <label for='full-name'>닉네임</label>
-         <input id='full-name' name='full-name' type='text' required='required'>
+         <label for='fullname02'>닉네임</label>
+         <input id='fullname02' name='fullname02' type='text' required='required'>
      </div>
-     
+     <br>
    <div>
        <label>학교 찾기</label>
        <input id ="text" name="school" type="search" required='required'>
    </div>
+   <br>
    <div>
     <label for='email'>학교 이메일</label>
     <input id = 'email' name="email" type="email" placeholder="12181234@inha.edu" required='required'>
    </div>
    <div>
-
        <label>전공</label>
        <input id ="text" name="department" type="text" required='required'>
        <label>학년</label>
-       <input type="number" type=number min="1" max="6" required='required'>
+       <input type="number" name="grade" min="1" max="6" required='required'>
     </div>
-
+    <br>
     <div>
         <label>계좌번호 입력</label>
     
@@ -63,7 +87,7 @@
         value="" autocomplete="off", required='required' placeholder="계좌번호 입력 ('-' 제외)">
 
     </div>
-
+    <br>
     <div>
         <label>관심분야</label>
         <input type = "checkbox" name="subject" value="디자인"> 디자인
@@ -74,7 +98,7 @@
         <input type = "checkbox" name="subject" value="앱"> 앱 프로그래밍
         <input type = "checkbox" name="subject" value="기타"> 기타
     </div>
-
+    <br><br><br>
 	<button type="submit">
 		<span>가입하기</span>
 	</button>
