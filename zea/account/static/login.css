@@ -22,11 +22,12 @@
 .box {
     margin: auto;
     width: 500px;
-    height: 420px;
+    height: 450px;
     border-radius: 50px;
-    border: solid 1px #707070;
+    border: solid 1px #ececec;
     background-color: #ffffff;
-    border-color: #c1c1c1;
+    box-shadow :1px 3px 7px #dcdcdc;
+
   }
 
 .id-box,.password-box {
@@ -75,3 +76,4 @@ h4{
     font-weight: normal;
     color: gray;
 }
+

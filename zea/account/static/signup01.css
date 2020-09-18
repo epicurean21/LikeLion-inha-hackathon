@@ -72,9 +72,9 @@ label {
     width: 700px;
     height: 660px;
     border-radius: 50px;
-    border: solid 1px #707070;
+    border: solid 1px #ececec;
     background-color: #ffffff;
-    border-color: #c1c1c1;
+    box-shadow :1px 3px 7px #dcdcdc;
   }
 
 /* 안 박스 입니다 */

@@ -1,0 +1,124 @@
+
+/* 웹폰트 입니다 */
+@import url('https://fonts.googleapis.com/earlyaccess/jejugothic.css');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+
+.jejugothic  { 
+ font-family: 'Jeju Gothic', sans-serif;
+} 
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* 라벨입니다 */
+
+ .block {
+    width:120%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+} 
+
+
+.box{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.text-box{ 
+    margin: auto;
+    width: 40%;
+    height: 625px;
+    border-radius: 0px;
+    border: solid 1px #ececec;
+    background-color: #ffffff;
+    box-shadow :1px 3px 7px #dcdcdc;
+    margin-left: 40px;
+    padding-left: 30px;
+}
+
+ h1{
+    font-family:'Jeju Gothic', sans-serif ;
+    font-weight: normal;
+    color:rgb(86, 86, 86);
+    font-size: 22px;
+    padding-top: 10px;
+}
+
+h2{
+    color: #57dd6b;
+}
+
+h3{
+    font-family:'Jeju Gothic', sans-serif ;
+    font-weight: normal;
+    color:rgb(86, 86, 86);
+    font-size: 18px;
+    margin-bottom: 1px;
+    margin-block-start: 0.1em;
+
+}
+
+p{
+    display: inline-block;
+    color: gray;
+    font-family: 'Noto Sans KR';
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+
+a {
+   text-align: center;
+}
+
+
+.apply-box{
+
+    margin-top: 10px;
+    width: 450px;
+    height: 40px;
+    background-color:#FFB950;
+    border: solid 1px #FFB950;
+    border-radius: 15px;
+    font-family:  'Jeju Gothic', sans-serif;
+    font-size: 20px;
+    color:white;
+    padding-top: 20px;
+
+}
+/* 바깥 박스 */
+ .box1 {
+    margin: auto;
+    width: 80%;
+    height: 800px;
+    border-radius: 5px;
+    border: solid 1px #ececec;
+    background-color: #f8f8f8;
+    box-shadow :2px 5px 8px #dcdcdc;
+    margin-top: 60px;
+    
+  }  
+
+/* 재능기여 박스 */
+.box2 {
+    margin: auto;
+    width: 100x;
+    height: 220px;
+    border-radius: 0px;
+    border: solid 1px #ececec;
+    background-color: #ffffff;
+    box-shadow :1px 3px 7px #dcdcdc;
+    margin-top: 30px;
+    padding-left: 30px;
+
+
+}
+
+

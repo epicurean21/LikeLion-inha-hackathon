@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/earlyaccess/jejugothic.css');
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
-/* 헤더 입니다. */
-.header {
-    font-family:  'Jeju Gothic', sans-serif;
-    font-size: 18px;
-    color:#FFB950;
-
-}
 
 
 /* 갤러리 입니다. */
@@ -111,13 +104,17 @@ ul{
 
 }
 
-.pagenation{
-    text-align: center;
-    display: inline;
-}
+
 
 li{
     list-style:none;
     display: inline-block;
     align-self: center;
+}
+
+/* 페이지네이션 입니다. */
+
+.pagenation{
+    text-align: center;
+    display: inline;
 }
