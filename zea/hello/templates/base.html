@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<!-- 헤더 입니다. -->
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 헤더 입니다. */
+    .header {
+        font-family: 'Jeju Gothic', sans-serif;
+        font-size: 18px;
+        color: #FFB950;
+
+
+    }
+
+    .header-box {
+        height: 100px;
+        border: solid 1px #dddddd;
+        background-color: white;
+        border-color: white;
+        border-bottom-color: #e7e7e7;
+
+    }
+</style>
+
+<body>
+    <div class="header-box">
+        <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
+        margin-top: 20px; margin-left: 20px;">
+            <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
+            <span>
+                <span style="margin-right: 60px; ">신청하기</span>
+
+                <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;" href="{% url 'home' %}">재능공간</a></span>
+                <span style="margin-right: 60px; ">마이페이지</span>
+                <span style="margin-right: 60px; "><a style="text-decoration: none;
+                color: #FFB950;"></a>{% if user.is_authenticated %}
+                    {{ user.username }}님!반갑습니다
+                    <span style="margin-right: 60px; "></span><a style="text-decoration: none;
+                color: #FFB950;" href="javascript:{document.getElementById('logout').submit()}">로그아웃</a></span>
+                <form id="logout" method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %} <input type="hidden" />
+                </form>
+                {% else %}
+                <span style="margin-right: 60px; "><a style="text-decoration: none;
+    color: #FFB950;" href="{% url 'login' %}">로그인</a></span>
+                {% endif %}
+            </span>
+            </span>
+        </div>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+
+
+</html>

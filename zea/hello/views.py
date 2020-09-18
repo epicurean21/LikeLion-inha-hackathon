@@ -54,3 +54,6 @@ def postdelete(request,post_id):
     deletepost=get_object_or_404(Blog,pk=post_id)
     deletepost.delete()
     return redirect('/')
+
+def apply1(request):
+    return render (request, 'apply.html')

@@ -13,7 +13,7 @@
     margin: auto;
     width: 500px;
     height: 420px;
-    border-radius: 50px;
+    border-radius: 60px;
     border: solid 1px #ececec;
     background-color: #ffffff;
     box-shadow :1px 3px 7px #dcdcdc;
@@ -37,6 +37,6 @@
 
 p{
     font-family:'Jeju Gothic', sans-serif ;
-    color: gray;
+    color: black;
 }
 

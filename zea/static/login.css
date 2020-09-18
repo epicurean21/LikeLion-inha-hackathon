@@ -22,12 +22,11 @@
 .box {
     margin: auto;
     width: 500px;
-    height: 450px;
+    height: 420px;
     border-radius: 50px;
-    border: solid 1px #ececec;
+    border: solid 1px #707070;
     background-color: #ffffff;
-    box-shadow :1px 3px 7px #dcdcdc;
-
+    border-color: #c1c1c1;
   }
 
 .id-box,.password-box {
