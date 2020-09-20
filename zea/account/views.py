@@ -45,7 +45,7 @@ def signup02(request):
         if request.POST['password02'] == request.POST['confirm02']:
             try:
                 user = User.objects.get(username = request.POST['username02'])
-                return render(reuqest, 'signup02.html', {'error' : 'username has already been used'})
+                return render(request, 'signup02.html', {'error' : 'username has already been used'})
             except User.DoesNotExist:
                 user = User.objects.create_user(
                     request.POST['username02'], password=request.POST['password02']

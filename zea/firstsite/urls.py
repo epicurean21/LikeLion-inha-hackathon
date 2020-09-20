@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 import hello.views
 import account.views
-
+import apply.views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -37,5 +37,9 @@ urlpatterns = [
     path('signup02/', account.views.signup02, name='signup02'),
     path('logout/', account.views.logout, name="logout"),
     path('apply1/', hello.views.apply1, name="apply1"),
-
+    path('merchandiserApply/',apply.views.merchandiserApply, name = "merchandiserApply" ),
+    path('merchandiserApplyTry/', apply.views.merchandiserApplyTry, name = "merchandiserApplyTry"),
+    path('studentApply/', apply.views.studentApply, name = "studentApply"),
+    path('studentApplyTry/', apply.views.studentApplyTry, name = "studentApplyTry"),
+    
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
