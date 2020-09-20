@@ -17,8 +17,7 @@ from django.contrib import admin
 from django.urls import path
 import hello.views
 import account.views
-
-
+import apply.views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -42,6 +41,9 @@ urlpatterns = [
     path('category2/', hello.views.category2, name="category2"),
     path('category3/', hello.views.category3, name="category3"),
     path('category4/', hello.views.category4, name="category4"),
-
+    path('merchandiserApply/',apply.views.merchandiserApply, name = "merchandiserApply" ),
+    path('merchandiserApplyTry/', apply.views.merchandiserApplyTry, name = "merchandiserApplyTry"),
+    path('studentApply/', apply.views.studentApply, name = "studentApply"),
+    path('studentApplyTry/', apply.views.studentApplyTry, name = "studentApplyTry"),
 
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

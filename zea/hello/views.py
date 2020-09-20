@@ -8,8 +8,6 @@ from .models import Blog
 def main(request):
     return render (request, 'main.html')
 
-
-
 def home(request):
     posts = Blog.objects.all().order_by('-id')
     paginator = Paginator(posts,6) 
