@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body>
+    <div class="box1">
+        <form method="POST" action="{% url 'studentApplyTry' %}">
+            {% csrf_token %}
+            <div class="box">
+                <div class="block">
+                    <label for='login_id'>이름</label>
+                    <input type=" text" name="name" placeholder="이름을 입력하세요" required='required' size="30">
+                </div>
+                <br>
+                <div class="block">
+                    <label>학교</label>
+                    <input id="text" name="school" type="text" required='required' size="30" placeholder=" ex)인하대학교">
+                </div>
+                <br>
+                <div class="block">
+                    <label for='email'>이메일</label>
+                    <input id='email' name="email" type="email" placeholder=" ex)12181234@inha.edu" required='required'
+                        size="30">
+                </div>
+                <br>
+                <div class="block">
+                    <label>전공</label>
+                    <input id="text" name="department" type="text" required='required' size="30" style="width: 100px;
+                height: 25px;">
+                    <label style="width:30px;">학년</label>
+                    <input type="number" type=number min="1" max="6" required='required' size="30" style="width: 40px;
+                height: 25px;">
+                </div>
+                <br>
+                <div class="block">
+                    <label>관심분야</label>
+                    <input style="width:15px;" type="checkbox" name="subject" value="디자인">
+                    <p>디자인</p>
+                    <input style="width:15px;" type="checkbox" name="subject" value="촬영">
+                    <p>촬영</p>
+                    <input style="width:15px;" type="checkbox" name="subject" value="컨설팅">
+                    <p>컨설팅</p><br>
+                    <label> </label>
+                    <input style="width:15px;" type="checkbox" name="subject" value="프로그래밍">
+                    <p>프로그래밍</p>
+                    <input style="width:15px;" type="checkbox" name="subject" value="기타">
+                    <p>기타</p>
+                </div>
+                <br><br>
+                <div style="text-align: center;">
+                    <input class="signup-input" type="submit" value="가입하기">
+                </div>
+                <br>
+                <div>
+                    <label for='applyContent'>지원 희망 내용</label><br>
+                    <textarea style="resize: none;" id='applyContent' name='applyContent' rows="10" cols="50"></textarea>
+                </div>
+
+            </div>
+
+    </div>
+
+    </form>
+</body>
