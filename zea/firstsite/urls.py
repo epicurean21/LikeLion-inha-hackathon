@@ -41,5 +41,5 @@ urlpatterns = [
     path('merchandiserApplyTry/', apply.views.merchandiserApplyTry, name = "merchandiserApplyTry"),
     path('studentApply/', apply.views.studentApply, name = "studentApply"),
     path('studentApplyTry/', apply.views.studentApplyTry, name = "studentApplyTry"),
-    
+
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.contrib import messages
 from .models import MerchandiserApply
 
 # Create your views here.
@@ -16,8 +17,13 @@ def merchandiserApplyTry(request):
         contact = request.POST.get('contact')
         email = request.POST.get('email')
         applyContent = request.POST.get('applyContent')
-        profile = MerchandiserApply(name = name, email = email, contact = contact, applyContent = applyContent)
+        location = request.POST.get('location')
+        price = request.POST.get('price')
+        date = request.POST.get('date')
+        profile = MerchandiserApply(name = name, email = email, contact = contact, applyContent = applyContent,
+            price = price, date = date, location = location)
         profile.save()
+        messages.add_message(request, messages.INFO, '신청이 완료되었습니다.')
     return render(request, 'main.html')
 
 def studentApply(request):

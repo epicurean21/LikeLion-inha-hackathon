@@ -16,15 +16,16 @@
     
 <form method="POST" action="{% url 'merchandiserApplyTry' %}">
     {% csrf_token %}
+    
     <div>
         <h2>신청하기</h2>
     </div>
     <div>
-        <label for='name'>이름(상호명)</label>
+        <label for='name'>상호명</label>
         <input type="text" , id="name" , name="name", required='required'>
     </div>
     <div>
-        <label for="contact">비상연락망</label>
+        <label for="contact">연락처</label>
         <input type="text" , id="contact", name = 'contact', required='required'>
     </div>
     <div>
@@ -35,8 +36,20 @@
         <input id='email' name='email' type='email' , required='required'>
     </div>
     <div>
-        <label for='applyContent'>지원 희망 내용</label><br>
+        <label for='applyContent'>재능 기여 내용</label><br>
         <textarea style="resize: none;" id='applyContent' name='applyContent' rows="10" cols="50"></textarea>
+    </div>
+    <div>
+        <label for ="location">위치</label>
+        <input type = "text" id = "location" name ="location">
+    </div>
+    <div>
+        <lable for ="date">기한</lable>
+        <input type = "date" id = "date" name ="date">
+    </div>
+    <div>
+        <lable for ='price'>가격</lable>
+        <input type = "number" id = "price" name ="price">
     </div>
     <div>
         <label for='input'>첨부파일</label>

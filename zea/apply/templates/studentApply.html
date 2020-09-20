@@ -61,6 +61,25 @@
                     <input class="signup-input" type="submit" value="가입하기">
                 </div>
                 <br>
+                <div class="block">
+                    <label> 계좌번호 입력</label>
+
+                    <input id="bank2" name="bank2" list="accountlist" placeholder=" 은행선택" required='required' size=11
+                        style="width: 100px;
+                height: 25px;">
+                    <datalist id="accountlist">
+                        <option value="국민">
+                        <option value="농협">
+                        <option value="우리">
+                        <option value="신한">
+                        <option value="카카오뱅크">
+                        <option value="하나">
+                    </datalist>
+
+                    <class="formfield"><input type="text" id="bank" name="bank" size="20" maxlength="20" style="width: 150px;
+                height: 25px;" autocomplete="off" required='required' placeholder=" 계좌번호 입력 ('-' 제외)">
+
+                </div>
                 <div>
                     <label for='applyContent'>지원 희망 내용</label><br>
                     <textarea style="resize: none;" id='applyContent' name='applyContent' rows="10" cols="50"></textarea>
@@ -72,3 +91,4 @@
 
     </form>
 </body>
+{% endblock %}
