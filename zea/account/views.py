@@ -20,7 +20,7 @@ def signup01(request):
                 user = User.objects.create_user(
                     request.POST['username01'], password=request.POST['password01']
                     )
-                fullname01 = request.POST['fullname01']
+                fullname = request.POST['fullname01']
                 email = request.POST['email01']
                 num1 = request.POST['num1']
                 num2 = request.POST['num2']
@@ -50,7 +50,7 @@ def signup02(request):
                 user = User.objects.create_user(
                     request.POST['username02'], password=request.POST['password02']
                     )
-                fullname02 = request.POST['fullname02']
+                fullname = request.POST['fullname02']
                 school = request.POST['school']
                 email = request.POST['email']
                 department = request.POST['department']
