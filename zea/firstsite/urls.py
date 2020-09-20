@@ -18,6 +18,7 @@ from django.urls import path
 import hello.views
 import account.views
 
+
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -37,5 +38,10 @@ urlpatterns = [
     path('signup02/', account.views.signup02, name='signup02'),
     path('logout/', account.views.logout, name="logout"),
     path('apply1/', hello.views.apply1, name="apply1"),
+    path('category1/', hello.views.category1, name="category1"),
+    path('category2/', hello.views.category2, name="category2"),
+    path('category3/', hello.views.category3, name="category3"),
+    path('category4/', hello.views.category4, name="category4"),
+
 
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
