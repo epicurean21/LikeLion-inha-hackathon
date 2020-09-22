@@ -46,21 +46,20 @@ p {
     margin-block-end: 1em;
     line-height:25px;
     margin-left: 10px;
-    font-family: 'Noto Sans KR';
-    color: #4f4f4f;
-}
+    
+    
 
+}
 h1 {
     display: block;
-    font-size: 16px;
+    font-size: 1.10em;
     margin-block-start: 0.5em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    font-weight: bold;
     line-height:25px;
     margin-left: 10px;
-    font-family: 'Noto Sans KR';
-    font-weight: normal;
 }
 
 
@@ -83,7 +82,7 @@ ul{
     width: 141px;
     height: 44px;
     font-family:'Jeju Gothic';
-    font-size: 19px;
+    font-size: 20px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
