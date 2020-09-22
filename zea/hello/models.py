@@ -22,14 +22,55 @@ class Blog (models.Model):
         (CONSERTING, "컨설팅"),
         (IT, "IT 및 프로그래밍"),
     ) # 파이썬에서 상수를 사용하고 싶을 때 관용적으로 대문자로 작성 
+   
     category = models.CharField(
         max_length=10,
         choices=CATEGORY_CHOICES,
         default=DESIGN,
     )
+
+    STORE = "업체"
+    STUDENT = "학생"
+    OTHERS = "기타"
+    CATEGORY_CHOICES = (
+        (STORE, "업체"),
+        (STUDENT, "학생"),
+        (OTHERS, "기타"),
+    ) # 파이썬에서 상수를 사용하고 싶을 때 관용적으로 대문자로 작성 
+    category2 = models.CharField(
+        max_length=10,
+        choices=CATEGORY_CHOICES,
+        default=STORE,
+    )
  
 
-    def __str__(self):
-        return self.title
 
-    
+
+
+class StuApply (models.Model):
+    namestore = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
+    school = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200 )
+    major = models.CharField(max_length=200)
+    phonenum = models.CharField(max_length=200)
+    grade = models.IntegerField()
+    account = models.CharField(max_length=200)
+    body = models.TextField()
+    image = models.ImageField(upload_to='images/')
+
+
+    STORE = "업체"
+    STUDENT = "학생"
+    OTHERS = "기타"
+    CATEGORY_CHOICES = (
+        (STORE, "업체"),
+        (STUDENT, "학생"),
+        (OTHERS, "기타"),
+    ) # 파이썬에서 상수를 사용하고 싶을 때 관용적으로 대문자로 작성 
+    category = models.CharField(
+        max_length=10,
+        choices=CATEGORY_CHOICES,
+        default=STORE,
+    )
+ 

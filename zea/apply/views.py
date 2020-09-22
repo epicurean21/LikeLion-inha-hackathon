@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib import messages
@@ -38,6 +38,7 @@ def studentApplyTry(request):
         school = request.POST.get('school')
         email = request.POST.get('email')
         department = request.POST.get('department')
+        phonenum = request.POST.get('phonenum')
         grade = request.POST.get('grade')
         subject = request.POST.getlist('subject')
         applyContent = request.POST.get('applyContent')

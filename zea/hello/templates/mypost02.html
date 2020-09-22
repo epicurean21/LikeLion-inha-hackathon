@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>
+
+        <!-- 카테고리 입니다. -->
+        <div class="category">
+            <h2>마이페이지</h2>
+            <br>
+            <hr align="left" style="border: soild 20px #FFB950; width:80%;">
+            <br>
+    
+            <ul>
+               
+                <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'mypost01' %}"> MY 재능공간</a></li>
+                <br>
+                <br>
+                <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'mypost02' %}"> 신청현황</a></li>
+                <br>
+                <br>
+         
+            </ul>
+    
+        </div>
+    
+        <div class="grid3">
+
+        <!-- 갤러리 입니다. -->
+        <div id="grid3">
+            {% for blog in page_posts %}
+            <div class="image1">
+                <a href="{% url 'detail3' blog.id %}"><img src="{{ blog.image.url }}" width="320px" height="300px" > </a>
+                <p> {{ blog.namestore }}</p>
+                <h1><a style="text-decoration:none; color:rgb(52, 52, 52);"
+                        href="{% url 'detail3' blog.id %}">{{ stuapply.namestore }}</a>
+                </h1>
+            
+            </div>
+
+            {%endfor%}
+        </div>
+    </div>
+
+    <div class="pagenation">
+        <ul style="margin-left: 50vw;">
+            {%if page_posts.has_previous%} <li>
+                <a style="text-decoration:none; color:gray;" href="?page={{page_posts.previous_page_number}}">이전</a>
+            </li>
+            {%endif%}
+            {%for i in page_posts.paginator.page_range%}
+            <li><a style="text-decoration:none; color:gray;" href="?page={{i}}">{{i}}</a></li>
+            {%endfor%}
+
+            {%if page_posts.has_next%}
+            <li><a style="text-decoration:none; color:gray;" href="?page={{page_posts.next_page_number}}">다음</a></li>
+            {%endif%}
+        </ul>
+    </div>
+</body>
+{% endblock %}
+
+</html>

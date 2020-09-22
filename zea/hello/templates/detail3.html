@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{% static 'detail.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="box1">
+        <p style="margin-left: 110px; margin-top: 40px; margin-bottom: 10px;"> 홈> 마이페이지> 신청현황> 자세히보기</p>
+        <div class="box">
+            <div class="block">
+                <div class="img">
+                    <img class="image-box" src="{{ onepost.image.url }}" width="500vw"><br>
+                   
+                
+                <div class="box2">
+                    <br>
+                    <h3>점주에게 하고싶은 말</h3>
+                    <hr align="left" style="border: soild 20px rgb(241, 241, 241); width:95%; opacity: 0.4;">
+                    <p>{{onepost.body |linebreaksbr}}</p>
+                </div>
+            </div>
+                <div class=" text-box">
+                    <h1>가게명: {{onepost.namestore}}
+                        <hr align="left" style="border: soild 20px rgb(241, 241, 241); width:95%; opacity: 0.4;">
+                    </h1><br>
+                    <h3>이 름</h3>
+                    <p>{{onepost.name}}</p><br>
+                    <h3>학 교</h3>
+                    <p>{{onepost.school}}</p><br>
+                    <h3>이메일</h3>
+                    <p>{{onepost.email}}</p><br>
+                    <h3>전 공 및 학 년</h3>
+                    <p>{{onepost.major}} {{onepost.grade}} </p><br>
+                    <h3>전 화 번 호</h3>
+                    <p>{{onepost.phonenum}}</p><br>
+                    <h3>계 좌</h3>
+                    <p>{{onepost.account}}</p><br>
+                
+
+                    <hr align="left" style="border: soild 20px rgb(241, 241, 241); width:95%; opacity: 0.4;">
+                 
+                    <a style="text-decoration: none;
+                    color: white" href="#">
+                       
+                    </a>
+
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    
+   
+    <!-- <a style="width: 10px; margin: 0 auto;" href="{% url 'home' %}">홈으로</a> -->
+
+
+    <br>
+    <br>
+    <br>
+
+</body>
+
+{% endblock %}
+
+</html>

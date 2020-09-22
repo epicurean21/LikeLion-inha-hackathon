@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
-	
 from django.core.paginator import Paginator   
 from .models import Blog
+from .models import StuApply
 
 
 # Create your views here.
@@ -74,6 +74,14 @@ def detail(request,post_id):
     onepost=get_object_or_404(Blog,pk=post_id)
     return render (request, 'detail.html', {'onepost':onepost})
 
+def detail2(request,post_id):
+    onepost=get_object_or_404(Blog,pk=post_id)
+    return render (request, 'detail2.html', {'onepost':onepost})
+
+def detail3(request,post_id):
+    onepost=get_object_or_404(StuApply,pk=post_id)
+    return render (request, 'detail3.html', {'onepost':onepost})
+ 
 def postedit(request,post_id):
     onepost=get_object_or_404(Blog,pk=post_id)
     return render(request,'postedit.html',{'onepost':onepost})
@@ -99,4 +107,36 @@ def apply1(request):
     return render (request, 'apply.html')
 
 
+def mypost(request):
+    if not request.user.is_authenticated: 
+        return render(request, 'login.html')
+    else:
+        your_category= request.GET.get("your_category")
+        posts = Blog.objects.filter(category="대학생").order_by('-id')    
+        paginator = Paginator(posts,6) 
+        page = request.GET.get('page')
+        page_posts = paginator.get_page(page)
+        return render(request,'mypost.html',{'page_posts':page_posts})
 
+def mypost01(request):
+    if not request.user.is_authenticated: 
+        return render(request, 'login.html')
+    else:
+        category2 = request.GET.get("category2")
+        posts = Blog.objects.filter(category2="업체").order_by('-id')    
+        paginator = Paginator(posts,6) 
+        page = request.GET.get('page')
+        page_posts = paginator.get_page(page)
+        return render(request,'mypost01.html',{'page_posts':page_posts})
+
+
+def mypost02(request):
+    if not request.user.is_authenticated: 
+        return render(request, 'login.html')
+    else:
+        category = request.GET.get("category")
+        posts = StuApply.objects.filter(category="학생").order_by('-id')    
+        paginator = Paginator(posts,6) 
+        page = request.GET.get('page')
+        page_posts = paginator.get_page(page)
+        return render(request,'mypost02.html',{'page_posts':page_posts})
