@@ -8,59 +8,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main</title>
-    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>소근소근</title>
+    <link rel="stylesheet" href="{% static 'merchandiserApply.css' %}">
 </head>
 
-<body style="text-align: center;">
-    
-<form method="POST" action="{% url 'merchandiserApplyTry' %}">
-    {% csrf_token %}
-    
-    <div>
-        <h2>신청하기</h2>
-    </div>
-    <div>
-        <label for='name'>상호명</label>
-        <input type="text" , id="name" , name="name", required='required'>
-    </div>
-    <div>
-        <label for="contact">연락처</label>
-        <input type="text" , id="contact", name = 'contact', required='required'>
-    </div>
-    <div>
+<body>
+    <br><br>
+    <div class="box1">
+        <form method="POST" action="{% url 'merchandiserApplyTry' %}">
+            {% csrf_token %}
+            <br>
+            <div>
+                <h4>신청하기</h4>
+            </div>
+            <br><br>
+            <div class="box">
+
+                <div class="block">
+                    <label for='name'>상호명</label>
+                    <input type="text" , id="name" , name="name" , required='required'>
+                </div>
+                <br>
+                <div class="block">
+                    <label for="contact">연락처</label>
+                    <input type="text" , id="contact" , name='contact' , required='required'>
+                </div>
+                <br>
+                <div class="block">
+                    <label for='email'>이메일</label>
+                    <input id='email' name='email' type='email' , required='required'>
+                </div>
+                <br>
+                <div class="block">
+                    <label style="z-index: 100;" for='applyContent'>재능기여
+                        내용ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</label>
+                    <textarea id='applyContent' name='applyContent'></textarea>
+                </div>
+                <br>
+                <div class="block">
+                    <label for="location">위치</label>
+                    <input type="text" id="location" name="location">
+                </div>
+                <br>
+                <div class="block">
+                    <lable style="font-family: 'Jeju Gothic', sans-serif ;
+                    color: gray;
+                    font-size: 15px;display: inline-block; width: 150px; text-align: left;" for="date">기한</lable>
+                    <input type="date" id="date" name="date">
+                </div>
+                <br>
+                <div class="block">
+                    <lable style="font-family: 'Jeju Gothic', sans-serif ;
+                    color: gray;
+                    font-size: 15px;display: inline-block; width: 150px; text-align: left;" for='price'>가격</lable>
+                    <input type="number" id="price" name="price">
+                </div>
+                <br>
+                <div class="block">
+                    <label>파일첨부</label>
+                    <input style="border: none;" type="file" accept="image/jpeg">
+                </div>
+                <br><br>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <input style="cursor:pointer;" class="apply1-input" type="submit" value="신청하기">
+            </div>
 
     </div>
-    <div>
-        <label for='email'>이메일</label>
-        <input id='email' name='email' type='email' , required='required'>
-    </div>
-    <div>
-        <label for='applyContent'>재능 기여 내용</label><br>
-        <textarea style="resize: none;" id='applyContent' name='applyContent' rows="10" cols="50"></textarea>
-    </div>
-    <div>
-        <label for ="location">위치</label>
-        <input type = "text" id = "location" name ="location">
-    </div>
-    <div>
-        <lable for ="date">기한</lable>
-        <input type = "date" id = "date" name ="date">
-    </div>
-    <div>
-        <lable for ='price'>가격</lable>
-        <input type = "number" id = "price" name ="price">
-    </div>
-    <div>
-        <label for='input'>첨부파일</label>
-        <input type="file">
-    </div>
-    <button type="submit">
-        <span>신청하기</span>
-    </button>
-    </div>
 
-</form>
+
+    </form>
+
+    <br>
+    <br>
+    <br>
+
 </body>
 
-    {% endblock %}
+{% endblock %}
