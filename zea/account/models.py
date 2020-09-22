@@ -14,6 +14,20 @@ class ProfileStu(models.Model):
     subject = models.TextField(max_length = 30)
     createdAt = models.DateTimeField(auto_now_add = True)
     updatedAt = models.DateTimeField(auto_now= True)
+    STORE2 = "소상업체"
+    STUDENT2 = "대학생"
+    
+    CATEGORY_CHOICES = (
+        (STORE2, "소상업체"),
+        (STUDENT2, "대학생"),
+        
+    ) # 파이썬에서 상수를 사용하고 싶을 때 관용적으로 대문자로 작성 
+    your_category = models.CharField(
+        max_length=10,
+        choices=CATEGORY_CHOICES,
+        default=STORE2,
+    )
+ 
 
 class ProfileMer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -26,3 +40,20 @@ class ProfileMer(models.Model):
     #photo = models.ImageField(null=True, blank=True, upload_to="merchandiser")
     createdAt = models.DateTimeField(auto_now_add = True)
     updatedAt = models.DateTimeField(auto_now= True)
+    STORE2 = "소상업체"
+    STUDENT2 = "대학생"
+    
+    CATEGORY_CHOICES = (
+        (STORE2, "소상업체"),
+        (STUDENT2, "대학생"),
+        
+    ) # 파이썬에서 상수를 사용하고 싶을 때 관용적으로 대문자로 작성 
+    your_category = models.CharField(
+        max_length=10,
+        choices=CATEGORY_CHOICES,
+        default=STORE2,
+    )
+ 
+ 
+
+   

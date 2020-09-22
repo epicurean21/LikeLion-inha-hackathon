@@ -26,6 +26,8 @@ urlpatterns = [
     path('', hello.views.main, name='main'),
     path('home', hello.views.home, name='home'),
     path('detail/<int:post_id>', hello.views.detail,name="detail"),
+    path('detail2/<int:post_id>', hello.views.detail2,name="detail2"),
+    path('detail3/<int:post_id>', hello.views.detail3,name="detail3"),
     path('edit/<int:post_id>', hello.views.postedit,name="postedit"),
     path('postupdate/<int:post_id>', hello.views.postupdate,name="postupdate"),
     path('postdelete/<int:post_id>', hello.views.postdelete,name="postdelete"),
@@ -45,5 +47,7 @@ urlpatterns = [
     path('merchandiserApplyTry/', apply.views.merchandiserApplyTry, name = "merchandiserApplyTry"),
     path('studentApply/', apply.views.studentApply, name = "studentApply"),
     path('studentApplyTry/', apply.views.studentApplyTry, name = "studentApplyTry"),
-
+    path('mypost/', hello.views.mypost, name="mypost"),
+    path('mypost01/', hello.views.mypost01, name="mypost01"),
+    path('mypost02/', hello.views.mypost02, name="mypost02"),
     ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
