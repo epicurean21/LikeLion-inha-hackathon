@@ -9,50 +9,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+    <title>소근소근</title>
     <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 </head>
 
 <body>
 
-        <!-- 카테고리 입니다. -->
-        <div class="category">
-            <h2>재능공간</h2>
+    <!-- 카테고리 입니다. -->
+    <div class="category">
+        <h2>재능공간</h2>
+        <br>
+        <hr align="left" style="border: soild 20px #FFB950; width:80%;">
+        <br>
+
+        <ul>
+
+            <li><a style="text-decoration: none; color: #7a7a7a;" href="{% url 'home' %}"> 전체보기 </a></li>
             <br>
-            <hr align="left" style="border: soild 20px #FFB950; width:80%;">
             <br>
-    
-            <ul>
-               
-                <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'home' %}"> ALL</a></li>
-                <br>
-                <br>
-                <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'category1' %}"> 디자인</a></li>
-                <br>
-                <br>
-                <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'category2' %}"> 영상·사진 </a></li>
-                <br>
-                <br>
-                 <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'category3' %}"> 컨설팅 </a></li>
-                <br>
-                <br>
-                <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'category4' %}"> IT·프로그래밍 </a></li>
-            </ul>
-    
-        </div>
-    
-        <div class="grid3">
+            <li><a style="text-decoration: none; color: #7a7a7a;" href="{% url 'category1' %}"> 디자인</a></li>
+            <br>
+            <br>
+            <li><a style="text-decoration: none; color: #7a7a7a;" href="{% url 'category2' %}"> 영상·사진 </a></li>
+            <br>
+            <br>
+            <li><a style="text-decoration: none; color: #7a7a7a;" href="{% url 'category3' %}"> 컨설팅 </a></li>
+            <br>
+            <br>
+            <li><a style="text-decoration: none; color: #7a7a7a;" href="{% url 'category4' %}"> IT·프로그래밍 </a></li>
+        </ul>
+
+    </div>
+
+    <div class="grid3">
 
         <!-- 갤러리 입니다. -->
         <div id="grid3">
             {% for blog in page_posts %}
             <div class="image1">
-                <a href="{% url 'detail' blog.id %}"><img src="{{ blog.image.url }}" width="320px" height="300px" > </a>
-                <p> {{ blog.name }}</p>
-                <h1><a style="text-decoration:none; color:rgb(52, 52, 52);"
+                <a href="{% url 'detail' blog.id %}"><img src="{{ blog.image.url }}" width="305px" height="195px"> </a>
+                <p style="margin-bottom: -5px; font-size: 14px;"> {{ blog.name }}</p>
+                <h1><a style="text-decoration:none; color:#171717;"
                         href="{% url 'detail' blog.id %}">{{ blog.title }}</a>
                 </h1>
-                <p style="text-align: right; margin-right: 10px;"> {{ blog.pay }}만 원 </p>
+                <div class="pay" style="text-align: right;">
+                    <span style="color: #57dd6b;"><i class="fas fa-receipt fa-lg"></i></span>
+                    <p style="text-align: right; margin-right: 10px; display: inline-block; ">
+                        {{ blog.pay }} 원 </p>
+                </div>
             </div>
 
             {%endfor%}

@@ -34,7 +34,7 @@ body {
 .text-box{ 
     margin: auto;
     width: 40%;
-    height: 625px;
+    height: 700px;
     border-radius: 0px;
     border: solid 1px #ececec;
     background-color: #ffffff;
@@ -103,7 +103,7 @@ a {
     background-color: #f8f8f8;
     box-shadow :2px 5px 8px #dcdcdc;
     margin-top: 60px;
-    
+
   }  
 
 /* 재능기여 박스 */

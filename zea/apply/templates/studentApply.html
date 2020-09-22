@@ -8,29 +8,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main</title>
-    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>소근소근</title>
+    <link rel="stylesheet" href="{% static 'studentApply.css' %}">
 </head>
 
 <body>
+    <br><br>
     <div class="box1">
         <form method="POST" action="{% url 'studentApplyTry' %}">
             {% csrf_token %}
+            <br>
+            <div>
+                <h4>대학생 신청하기</h4>
+            </div>
+            <br> <br>
             <div class="box">
                 <div class="block">
                     <label for='login_id'>이름</label>
-                    <input type=" text" name="name" placeholder="이름을 입력하세요" required='required' size="30">
+                    <input type=" text" name="name" placeholder=" 이름을 입력하세요." required='required'=>
                 </div>
                 <br>
                 <div class="block">
                     <label>학교</label>
-                    <input id="text" name="school" type="text" required='required' size="30" placeholder=" ex)인하대학교">
+                    <input id="text" name="school" type="text" required='required' placeholder=" ex)인하대학교">
                 </div>
                 <br>
                 <div class="block">
                     <label for='email'>이메일</label>
-                    <input id='email' name="email" type="email" placeholder=" ex)12181234@inha.edu" required='required'
-                        size="30">
+                    <input id='email' name="email" type="email" placeholder=" ex)12181234@inha.edu" required='required'>
                 </div>
                 <br>
                 <div class="block">
@@ -38,10 +43,13 @@
                     <input id="text" name="department" type="text" required='required' size="30" style="width: 100px;
                 height: 25px;">
                     <label style="width:30px;">학년</label>
-                    <input type="number" name = "grade" min="1" max="6" required='required' size="30" style="width: 40px;
+                    <input type="number" name="grade" min="1" max="6" required='required' size="30" style="width: 40px;
                 height: 25px;">
                 </div>
                 <br>
+
+
+
                 <div class="block">
                     <label for='email'>전화번호</label>
                     <input id='text' name="phonenum" type="text" placeholder=" ex)01012345678" required='required'
@@ -64,6 +72,7 @@
                 </div>
                 <br><br>
                 <br>
+
                 <div class="block">
                     <label> 계좌번호 입력</label>
 
@@ -83,18 +92,32 @@
                 height: 25px;" autocomplete="off" required='required' placeholder=" 계좌번호 입력 ('-' 제외)">
 
                 </div>
-                <div>
-                    <label for='applyContent'>지원 희망 내용</label><br>
-                    <textarea style="resize: none;" id='applyContent' name='applyContent' rows="10" cols="50"></textarea>
+                <br>
+                <div class="block">
+                    <label style="z-index: 100;" for='applyContent'>재능기여
+                        내용ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</label>
+                    <textarea id='applyContent' name='applyContent'></textarea>
                 </div>
+                <div class="block">
+                    <label>파일첨부</label>
+                    <input style="border: none;" type="file" accept="image/jpeg">
+                </div>
+                <br><br>
+                <div style="text-align: center;">
+                    <input style="cursor:pointer;" class="apply2-input" type="submit" value="신청하기">
+                </div
                 
                 <div style="text-align: center;">
                     <input class="signup-input" type="submit" value="가입하기">
                 </div>
             </div>
 
-    </div>
-
-    </form>
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 </body>
 {% endblock %}
