@@ -16,7 +16,12 @@
 
 
 <body style="text-align: center;">
-
+    {% if some_flag %}
+    <script type="text/javascript">
+        alert('성공적으로 신청하였습니다')
+        window.location.href = '/';
+      </script>
+    {% endif %}
     <!-- 메뉴 바 입니다. -->
     <img src="/static/img/main3.jpg" alt="main" width="100%">
     <div class="menu-var">
