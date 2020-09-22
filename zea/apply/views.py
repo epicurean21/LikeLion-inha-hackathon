@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib import messages
 from .models import MerchandiserApply
+from .models import StudentApply
 
 # Create your views here.
 def merchandiserApply(request):
@@ -23,17 +24,39 @@ def merchandiserApplyTry(request):
         profile = MerchandiserApply(name = name, email = email, contact = contact, applyContent = applyContent,
             price = price, date = date, location = location)
         profile.save()
-        messages.add_message(request, messages.INFO, '신청이 완료되었습니다.')
-    return render(request, 'main.html')
+    return render(request, 'main.html', {'some_flag': True})
+
+# def studentApply(request, post_id):
+#     return render(request, 'studentApply.html')
+
+# def studentApplyTry(request, post_id):
+#     if not request.user.is_authenticated:
+#         # 원래는 대학생인지도 확인을 해야함
+#         return render(request, 'login.html')
+#     else:
+#         postId = post_id
+#         name = request.POST.get('name')
+#         school = request.POST.get('school')
+#         email = request.POST.get('email')
+#         department = request.POST.get('department')
+#         grade = request.POST.get('grade')
+#         subject = request.POST.getlist('subject')
+#         applyContent = request.POST.get('applyContent')
+#         file = request.POST.get('file')
+#         profile = StudentApply(postId = postId, name = name, email = email, applyContent = applyContent, 
+#         school=school, grade = grade, subject=subject, department=department, file = file)
+#         profile.save()
+#     return render(request, 'home.html')
 
 def studentApply(request):
-    return render(request, 'studentApply.html')
+     return render(request, 'studentApply.html')
 
 def studentApplyTry(request):
     if not request.user.is_authenticated:
         # 원래는 대학생인지도 확인을 해야함
         return render(request, 'login.html')
     else:
+        #postId = post_id
         name = request.POST.get('name')
         school = request.POST.get('school')
         email = request.POST.get('email')
@@ -42,4 +65,8 @@ def studentApplyTry(request):
         grade = request.POST.get('grade')
         subject = request.POST.getlist('subject')
         applyContent = request.POST.get('applyContent')
-        profile = StudentApply(name = name, email = email, contact = contact, applyContent = applyContent, school=school, grade=grade,subject=subject, department=department)
+        file = request.POST.get('file')
+        profile = StudentApply(name = name, email = email, applyContent = applyContent, 
+        school=school, grade = grade, subject=subject, department=department, file = file)
+        profile.save()
+    return render(request, 'home.html',  {'some_flag': True})

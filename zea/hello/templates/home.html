@@ -15,9 +15,16 @@
 </head>
 
 <body>
-
     <!-- 카테고리 입니다. -->
     <div class="category">
+    {% if some_flag %}
+    <script type="text/javascript">
+        alert('성공적으로 신청하였습니다')
+        window.location.href = '/';
+      </script>
+    {% endif %}
+       <!-- 카테고리 입니다. -->
+       <div class="category">
         <h2>재능공간</h2>
         <br>
         <hr align="left" style="border: soild thin 10px #FFB950; width:70%;">
