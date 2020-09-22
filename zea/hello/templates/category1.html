@@ -15,8 +15,8 @@
 
 <body>
 
-       <!-- 카테고리 입니다. -->
-       <div class="category">
+    <!-- 카테고리 입니다. -->
+    <div class="category">
         <h2>재능공간</h2>
         <br>
         <hr align="left" style="border: soild 20px #FFB950; width:80%;">
@@ -47,10 +47,10 @@
         <div id="grid3">
             {% for blog in page_posts %}
             <div class="image1">
-                <a href="{% url 'detail' blog.id %}"><img src="{{ blog.image.url }}" width="320px" height="300px"   > </a>
+                <a href="{% url 'detail' blog.id %}"><img src="{{ blog.image.url }}" width="320px" height="300px" > </a>
                 <p> {{ blog.name }}</p>
                 <h1><a style="text-decoration:none; color:rgb(52, 52, 52);"
-                        href="{% url 'detail' blog.id %}"   >{{ blog.title }}</a>
+                        href="{% url 'detail' blog.id %}">{{ blog.title }}</a>
                 </h1>
                 <p style="text-align: right; margin-right: 10px;"> {{ blog.pay }}만 원 </p>
             </div>
