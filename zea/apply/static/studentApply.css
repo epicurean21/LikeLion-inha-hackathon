@@ -1,0 +1,98 @@
+/* 웹폰트 입니다 */
+@import url('https://fonts.googleapis.com/earlyaccess/jejugothic.css');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+
+.jejugothic  { 
+ font-family: 'Jeju Gothic', sans-serif;
+} 
+
+
+/* 헤더입니다 */
+.header {
+    font-family:  'Jeju Gothic', sans-serif;
+    font-size: 18px;
+    color:#FFB950;
+}
+
+/* 글씨입니다 */
+h4{
+    font-family:'Jeju Gothic', sans-serif ;
+    font-weight: normal;
+    color: gray;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+/* 신청하기 박스입니다 */
+.apply2-input{
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    background-color:#FFB950;
+    border: solid 1px #FFB950;
+    border-radius: 18px;
+    font-family:  'Jeju Gothic', sans-serif;
+    font-size: 15px;
+    color:white;
+    cursor:pointer;
+
+}
+
+/* 인풋박스입니다 */
+
+input:focus {outline:none;
+} 
+input {
+    margin: auto;
+    width: 200px;
+    height: 25px;
+    border-radius: 8px;
+    border: solid 1px #838282;
+    background-color: #ffffff;
+    border-color: #c1c1c1; padding-top: 5px;
+}
+
+
+/* 라벨입니다 */
+
+.block label { display: inline-block; width: 150px; text-align: left; }
+
+
+label {
+    font-family: 'Jeju Gothic', sans-serif ;
+    color: gray;
+    font-size: 15px;
+}
+  
+/* 바깥 박스 입니다 */
+.box1 {
+    margin: auto;
+    width: 700px;
+    height: 740px;
+    border-radius: 50px;
+    border: solid 1px #ececec;
+    background-color: #ffffff;
+    box-shadow :1px 3px 7px #dcdcdc;
+  }
+
+/* 안 박스 입니다 */
+  .box{
+    width: 500px;
+   margin: 0 auto;
+
+}
+
+/* 재능기여 텍스트박스 입니다 */
+textarea{
+    margin: auto;
+    border-radius: 8px;
+    border: solid 1px #838282;
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    padding-top: 5px;
+    width: 265px;
+    height: 100px;
+}

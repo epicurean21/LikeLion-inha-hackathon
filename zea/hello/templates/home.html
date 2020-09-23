@@ -18,17 +18,18 @@
     <script type="text/javascript">
         alert('성공적으로 신청하였습니다')
         window.location.href = '/';
-      </script>
+    </script>
     {% endif %}
-       <!-- 카테고리 입니다. -->
-       <div class="category">
+
+    <!-- 카테고리 입니다. -->
+    <div class="category">
         <h2>재능공간</h2>
         <br>
         <hr align="left" style="border: soild 20px #FFB950; width:80%;">
         <br>
 
         <ul>
-           
+
             <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'home' %}"> ALL</a></li>
             <br>
             <br>
@@ -38,7 +39,7 @@
             <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'category2' %}"> 영상·사진 </a></li>
             <br>
             <br>
-             <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'category3' %}"> 컨설팅 </a></li>
+            <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'category3' %}"> 컨설팅 </a></li>
             <br>
             <br>
             <li><a style="text-decoration: none; color: #FFB950;" href="{% url 'category4' %}"> IT·프로그래밍 </a></li>
@@ -52,10 +53,12 @@
         <div id="grid3">
             {% for blog in page_posts %}
             <div class="image1">
-                <a href="{% url 'detail' blog.id %}"><img src="{{ blog.image.url }}" width="320px" height="300px"   > </a>
-                <p> {{ blog.name }}</p>
-                <h1><a style="text-decoration:none; color:rgb(52, 52, 52);"
-                        href="{% url 'detail' blog.id %}"   >{{ blog.title }}</a>
+
+                <a href="{% url 'detail' blog.id %}"><img src="{{ blog.image.url }}" width="305px" height="195px">
+                </a>
+                <p style="margin-bottom: -5px; font-size: 14px;"> {{ blog.name }}</p>
+                <h1><a style="text-decoration:none; color:#171717;"
+                        href="{% url 'detail' blog.id %}">{{ blog.title }}</a>
                 </h1>
                 <p style="text-align: right; margin-right: 10px;"> {{ blog.pay }}만 원 </p>
             </div>
@@ -75,7 +78,8 @@
             {%endfor%}
 
             {%if page_posts.has_next%}
-            <li><a style="text-decoration:none; color:gray;" href="?page={{page_posts.next_page_number}}">다음</a></li>
+            <li><a style="text-decoration:none; color:gray;" href="?page={{page_posts.next_page_number}}">다음</a>
+            </li>
             {%endif%}
         </ul>
     </div>

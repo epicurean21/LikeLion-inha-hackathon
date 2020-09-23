@@ -40,9 +40,9 @@
     <div class="header-box">
         <div class="header" style=" height: 50px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;
         margin-top: 20px; margin-left: 20px;">
-            <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%;"></a>
+            <a href="{% url 'main' %}"><img src="/static/img/logo.png" width="90px" style="top: 50%"></a>
             <span>
-                <span style="margin-right: 60px; "><a style="text-decoration: none;
+                <span style="margin-right: 60px; margin-left: 500px;"><a style="text-decoration: none;
                     color: #FFB950;" href="{% url 'merchandiserApply' %}">신청하기</a></span>
 
                 <span style="margin-right: 60px; "><a style="text-decoration: none;
@@ -61,7 +61,8 @@
                 {% else %}
                 <span style="margin-right: 60px; "><a style="text-decoration: none; color: #FFB950;"
                         href="{% url 'login' %}">로그인</a></span>
-                {% endif %}
+            </span>
+            {% endif %}
             </span>
         </div>
     </div>
